@@ -13,7 +13,6 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        allowNull: false,
         type: Sequelize.TEXT
       },
       addres: {
@@ -55,6 +54,16 @@ module.exports = {
       status: {
         allowNull: false,
         type: Sequelize.ENUM('online', 'offline', 'closed', 'temporarily closed')
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: new Date()
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       }
     })
   },
