@@ -24,7 +24,6 @@ module.exports = {
         type: Sequelize.STRING
       },
       url: {
-        allowNull: false,
         type: Sequelize.TEXT
       },
       shippingCosts: {
@@ -36,24 +35,40 @@ module.exports = {
         type: Sequelize.DOUBLE
       },
       email: {
-        allowNull: false,
         type: Sequelize.TEXT
       },
       phone: {
-        allowNull: false,
         type: Sequelize.TEXT
       },
       logo: {
-        allowNull: false,
         type: Sequelize.TEXT
       },
       heroImage: {
-        allowNull: false,
         type: Sequelize.TEXT
       },
       status: {
         allowNull: false,
         type: Sequelize.ENUM('online', 'offline', 'closed', 'temporarily closed')
+      },
+      restaurantCategoryId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: {
+            tableName: 'RestaurantCategories'
+          },
+          key: 'id'
+        }
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: {
+            tableName: 'Users'
+          },
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
