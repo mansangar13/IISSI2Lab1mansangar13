@@ -24,22 +24,22 @@ module.exports = {
         type: Sequelize.STRING
       },
       url: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       shippingCosts: {
         type: Sequelize.DOUBLE
       },
       email: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       phone: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       logo: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       heroImage: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       status: {
         allowNull: false,
