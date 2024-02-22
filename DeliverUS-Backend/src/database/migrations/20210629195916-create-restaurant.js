@@ -15,7 +15,7 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
-      addres: {
+      address: {
         allowNull: false,
         type: Sequelize.STRING
       },
@@ -27,10 +27,6 @@ module.exports = {
         type: Sequelize.TEXT
       },
       shippingCosts: {
-        type: Sequelize.DOUBLE
-      },
-      averageServiceMinutes: {
-        allowNull: false,
         type: Sequelize.DOUBLE
       },
       email: {
