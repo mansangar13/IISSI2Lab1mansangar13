@@ -38,7 +38,7 @@ const loadModel = (sequelize, DataTypes) => {
     phone: DataTypes.STRING,
     logo: DataTypes.STRING,
     heroImage: DataTypes.STRING,
-    status: DataTypes.ENUM('online', 'offline', 'closed', 'temporariy closed'),
+    status: DataTypes.ENUM('online', 'offline', 'closed', 'temporarily closed'),
     restaurantCategoryId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   }, {
