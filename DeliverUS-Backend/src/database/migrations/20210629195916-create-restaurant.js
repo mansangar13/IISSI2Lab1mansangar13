@@ -27,7 +27,6 @@ module.exports = {
         type: Sequelize.TEXT
       },
       shippingCosts: {
-        allowNull: false,
         type: Sequelize.DOUBLE
       },
       averageServiceMinutes: {
