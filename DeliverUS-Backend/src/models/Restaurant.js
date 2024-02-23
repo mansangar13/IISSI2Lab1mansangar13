@@ -20,7 +20,7 @@ const loadModel = (sequelize, DataTypes) => {
       try {
         const orders = await this.getOrders()
         const serviceTimes = orders.filter(o => o.deliveredAt).map(o => moment(o.deliveredAt).diff(moment(o.createdAt), 'minutes'))
-        return serviceTimes.reduce((acc, serviceTime) => acc + serviceTime, 0) / serviceTimes.length
+        return serviceTimes.reduce((acc, serviceTime) => acc + serviceTime, 0) / serviceTimes.length // Devuelve un objeto, como queremos un nº, lo multiplicamos * 1
       } catch (err) {
         return err
       }
@@ -34,6 +34,12 @@ const loadModel = (sequelize, DataTypes) => {
     postalCode: DataTypes.STRING,
     url: DataTypes.STRING,
     shippingCosts: DataTypes.DOUBLE,
+    averageServiceMinutes: {
+      type: DataTypes.VIRTUAL,
+      get () {
+        return this.getAverageServiceTime() * 1
+      }
+    },
     email: DataTypes.STRING,
     phone: DataTypes.STRING,
     logo: DataTypes.STRING,
